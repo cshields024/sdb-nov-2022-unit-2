@@ -22,12 +22,39 @@ while(guess != secretNum) {
    else if (guess < secretNum) {
       minNum = guess + 1
       guess = Math.round((maxNum + minNum) / 2)
+      console.log('minNum:',minNum);
+      console.log('guess:',guess);
+      if (minNum === secretNum) break;
    } else {
-      maxNum = guess + 1 
+      maxNum = guess - 1 
       guess = Math.round((maxNum + minNum) / 2)
+      console.log('maxNum:',maxNum);
+      console.log('guess:',guess);
+      if (maxNum === secretNum) break;
    }
-   console.log(`is your number ${guess}`)
 }
+
+if  (minNum === secretNum) {
+   console.log(`is your number ${minNum}?`)
+} else if (maxNum === secretNum) {
+   console.log(`is your number ${maxNum}?`)
+} else {
+   console.log(`is your number ${guess}?`)
+}
+
+
+// while(guess != secretNum) {
+//    if(guess === secretNum) break;
+//    else if (guess < secretNum) {
+//       minNum = guess + 1
+//       guess = Math.round((maxNum + minNum) / 2)
+//    } else if (guess > secretNum) {
+//       maxNum = guess + 1 
+//       guess = Math.round((maxNum + minNum) / 2)
+//    } else {
+//       console.log(`is your number ${guess}`)
+//    }
+// }
 
 
 // function guessNum() {
