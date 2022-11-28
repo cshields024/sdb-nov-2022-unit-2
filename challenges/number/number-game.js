@@ -10,27 +10,33 @@
     
 // }
 
-let secretNum = Math.floor(Math.random() * 101) + 1;
-let maxNum = 100;
+let secretNum = Math.floor(Math.random() * 1000) + 1;
+let maxNum = 1000;
 let minNum = 1;
-let guess = 50
+// Making guess dynamic means we can use any number range.
+let guess = Math.round((maxNum + minNum) / 2)
 console.log('secretNum:', secretNum)
 // ! THIS WORKS!!
+if (secretNum <= 1000) {
+   console.log(`lets play!`)
+} else {
+   console.log(`please choose a number i can handle`)
+}
 
 while(guess != secretNum) {
-   if(guess === secretNum) break;
+   if(guess === secretNum);
    else if (guess < secretNum) {
       minNum = guess + 1
       guess = Math.round((maxNum + minNum) / 2)
       console.log('minNum:',minNum);
       console.log('guess:',guess);
-      if (minNum === secretNum) break;
+      if (minNum === secretNum);
    } else {
       maxNum = guess - 1 
       guess = Math.round((maxNum + minNum) / 2)
       console.log('maxNum:',maxNum);
       console.log('guess:',guess);
-      if (maxNum === secretNum) break;
+      if (maxNum === secretNum);
    }
 }
 
